@@ -5,7 +5,7 @@ body file control
 
 bundle agent inventory_kernel_boot_params
 # @brief Inventory parameters passed to kernel during boot
-# @var "default:inventory_kernel_boot_params.content"
+# @var "nickanderson:inventory_kernel_boot_params.content"
 # @inventory "Kernel Boot Params"
 {
   meta:
