@@ -8,11 +8,6 @@ bundle agent inventory_kernel_boot_params
 # @var "nickanderson:inventory_kernel_boot_params.content"
 # @inventory "Kernel Boot Params"
 {
-  meta:
-      "tags"
-        slist => { "autorun" },
-        if => fileexists( "/proc/cmdline" );
-
   vars:
       "content"
         string => readfile( "/proc/cmdline", inf ),
