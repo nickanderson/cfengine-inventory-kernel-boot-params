@@ -1,0 +1,39 @@
+body file control
+{
+  namespace => "nickanderson";
+}
+
+bundle agent inventory_kernel_boot_params
+# @brief Inventory parameters passed to kernel during boot
+# @var "default:inventory_kernel_boot_params.content"
+# @inventory "Kernel Boot Params"
+{
+  meta:
+      "tags"
+        slist => { "autorun" },
+        if => fileexists( "/proc/cmdline" );
+
+  vars:
+      "content"
+        string => readfile( "/proc/cmdline", inf ),
+        meta => { "inventory",
+                  "attribute_name=Kernel Boot Params",
+                  "derived_from=/proc/cmdline" },
+        if => fileexists( "/proc/cmdline" );
+
+  reports:
+      inform_mode|verbose_mode::
+        "Kernel Boot Params = $(content)"
+          if => isvariable( "content" );
+}
+
+body file control
+{
+        namespace => "default";
+}
+
+bundle agent __main__
+{
+  methods:
+      "nickanderson:inventory_kernel_boot_params";
+}

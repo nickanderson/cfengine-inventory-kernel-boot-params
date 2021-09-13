@@ -1,0 +1,5 @@
+#+title: Inventory Kernel Boot Params
+
+Inventory the parameters passed to the kernel during boot time.
+
+On Linux, this is the content from =/proc/cmdline=.

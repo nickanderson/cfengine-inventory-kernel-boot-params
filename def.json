@@ -1,0 +1,6 @@
+{
+    "vars": {
+        "control_common_bundlesequence_classification": [ "nickanderson:inventory_kernel_boot_params" ]
+    },
+    "inputs": [ "services/inventory-kernel-boot-params/main.cf" ]
+}
