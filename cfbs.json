@@ -1,10 +1,14 @@
 {
+  "name": "Inventory kernel boot parameters",
+  "description": "Inventory kernel parameters set during system boot.",
+  "provides": {
     "inventory-kernel-boot-params": {
       "description": "Inventory kernel parameters set during system boot",
-      "tags": ["wip", "untested"],
-        "steps": [
-            "copy policy/main.cf services/inventory-kernel-boot-params/main.cf",
-            "json augments.json def.json"
-        ]
+      "tags": ["untested"],
+      "steps": [
+        "copy policy/main.cf services/inventory-kernel-boot-params/main.cf",
+        "json augments.json def.json"
+      ]
     }
+  }
 }
