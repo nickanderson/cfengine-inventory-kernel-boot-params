@@ -1,5 +1,25 @@
 #+title: Inventory Kernel Boot Params
 
-Inventory the parameters passed to the kernel during boot time.
+* Synopsis
 
-On Linux, this is the content from =/proc/cmdline=.
+- *Name*: =inventory-kernel-boot-params=
+- *Version*: =0.1.1=
+- *Description*: Inventory the parameters passed to the kernel during boot time.
+
+* Inventory
+
+- /Kernel Boot Params/ :: Derived from =/proc/cmdline=
+
+* Requirements
+
+- CFEngine version 3.7.0 or greater
+
+* Installation via cfbs
+
+#+begin_example
+  ❯ cfbs search inventory-kernel-boot-params
+  inventory-kernel-boot-params - Inventory kernel parameters set during system boot
+  ❯ cfbs add inventory-kernel-boot-params
+  Added module: inventory-kernel-boot-params
+#+end_example
+
