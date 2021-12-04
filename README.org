@@ -1,25 +1,9 @@
-#+title: Inventory Kernel Boot Params
+Many aspects of the Linux Kernel can be controlled via boot parameters. Knowing what kernel parameters your hosts have been booted with can help you to evaluate if there are any settings which may degrade security.
 
-* Synopsis
-
-- *Name*: =inventory-kernel-boot-params=
-- *Version*: =0.1.1=
-- *Description*: Inventory the parameters passed to the kernel during boot time.
+For example, are any of your hosts booted with =noibrs=, =noibpb=, =nopti=, =nospectre_v2=, =nospectre_v1=, =l1tf=off=, =nospec_store_bypass_disable= =no_stf_barrier=, =mds=off=, =tsx=on=, =tsx_async_abort=off=, or =mitigations=off=? If so, [[https://make-linux-fast-again.co][your systems are probably fast]], but they are also less secure.
 
 * Inventory
 
 - /Kernel Boot Params/ :: Derived from =/proc/cmdline=
 
-* Requirements
-
-- CFEngine version 3.7.0 or greater
-
-* Installation via cfbs
-
-#+begin_example
-  ❯ cfbs search inventory-kernel-boot-params
-  inventory-kernel-boot-params - Inventory kernel parameters set during system boot
-  ❯ cfbs add inventory-kernel-boot-params
-  Added module: inventory-kernel-boot-params
-#+end_example
-
+[[https://raw.github.com/nickanderson/cfengine-inventory-kernel-boot-params/master/host-info-page-inventory-kernel-boot-parms.png]]
